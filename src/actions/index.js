@@ -1,5 +1,7 @@
 export const SET_USER_EMAIL = 'SET_USER_EMAIL';
 export const SET_CURRENCY_LIST = 'SET_CURRENCY_LIST';
+export const GET_EXPENSES = 'GET_EXPENSES';
+export const SET_PRICES = 'SET_PRICES';
 
 export const saveUserEmail = (email) => ({
   type: SET_USER_EMAIL,
@@ -15,7 +17,30 @@ export const fetchCurrency = () => async (dispatch) => {
   try {
     const response = await fetch('https://economia.awesomeapi.com.br/json/all');
     const result = await response.json();
-    dispatch(setCurrency(result));
+    const key = Object.keys(result);
+    const retorno = key.filter((curr) => curr !== 'USDT');
+    dispatch(setCurrency(retorno));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const setPrices = (expenses) => ({
+  type: SET_PRICES,
+  payload: expenses,
+});
+
+export const setExpenses = (expense) => ({
+  type: GET_EXPENSES,
+  payload: expense,
+});
+
+export const fetchPrice = (expense) => async (dispatch) => {
+  try {
+    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const result = await response.json();
+    const priceObj = { ...expense, exchangeRates: { ...result } };
+    dispatch(setExpenses(priceObj));
   } catch (error) {
     console.log(error);
   }
