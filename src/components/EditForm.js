@@ -8,6 +8,7 @@ class EditForm extends React.Component {
     super(props);
 
     this.state = {
+      id: props.expense.id,
       value: props.expense.value,
       currency: props.expense.currency,
       method: props.expense.method,
