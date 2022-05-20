@@ -42,7 +42,6 @@ class Form extends React.Component {
   render() {
     const { currencies } = this.props;
     const { value, currency, method, tag, description } = this.state;
-    console.log(currencies);
     return (
       <div>
         <form>

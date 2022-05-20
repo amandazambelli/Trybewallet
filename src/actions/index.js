@@ -2,6 +2,7 @@ export const SET_USER_EMAIL = 'SET_USER_EMAIL';
 export const SET_CURRENCY_LIST = 'SET_CURRENCY_LIST';
 export const GET_EXPENSES = 'GET_EXPENSES';
 export const SET_PRICES = 'SET_PRICES';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const saveUserEmail = (email) => ({
   type: SET_USER_EMAIL,
@@ -39,9 +40,14 @@ export const fetchPrice = (expense) => async (dispatch) => {
   try {
     const response = await fetch('https://economia.awesomeapi.com.br/json/all');
     const result = await response.json();
-    const priceObj = { ...expense, exchangeRates: { ...result } };
-    dispatch(setExpenses(priceObj));
+    const expensesAndRates = { ...expense, exchangeRates: { ...result } };
+    dispatch(setExpenses(expensesAndRates));
   } catch (error) {
     console.log(error);
   }
 };
+
+export const deleteButton = (expenseId) => ({
+  type: DELETE_EXPENSE,
+  payload: expenseId,
+});
