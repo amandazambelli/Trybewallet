@@ -15,7 +15,7 @@ class Wallet extends React.Component {
       <div>
         <Header />
         { Number.isInteger(edit) ? <EditForm expense={ expense } /> : <Form /> }
-        { expenses.length && <Table /> }
+        { expenses.length ? <Table /> : null }
       </div>
     );
   }
