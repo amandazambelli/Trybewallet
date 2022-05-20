@@ -1,24 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCurrency, fetchPrice } from '../actions';
+import { editedInfos } from '../actions';
 
-class Form extends React.Component {
-  constructor() {
-    super();
+class EditForm extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
-      value: '',
-      currency: '',
-      method: '',
-      tag: '',
-      description: '',
+      value: props.expense.value,
+      currency: props.expense.currency,
+      method: props.expense.method,
+      tag: props.expense.tag,
+      description: props.expense.description,
+      exchangeRates: props.expense.exchangeRates,
     };
-  }
-
-  componentDidMount() {
-    const { fetchCurrencyList } = this.props;
-    fetchCurrencyList();
   }
 
   handleChange = (event) => {
@@ -28,20 +24,14 @@ class Form extends React.Component {
     });
   }
 
-  handleSubmit = (event) => {
-    const { AddExpenses, expenses } = this.props;
-    const { value, currency, method, tag, description } = this.state;
-    event.preventDefault();
-    AddExpenses({ id: expenses.length, value, currency, method, tag, description });
-    this.setState({
-      value: '',
-      description: '',
-    });
+  handleEdit = () => {
+    const { dispatch } = this.props;
+    dispatch(editedInfos(this.state));
   }
 
   render() {
-    const { currencies } = this.props;
     const { value, currency, method, tag, description } = this.state;
+    const { currencies } = this.props;
     return (
       <div>
         <form>
@@ -111,9 +101,9 @@ class Form extends React.Component {
           </label>
           <button
             type="submit"
-            onClick={ this.handleSubmit }
+            onClick={ this.handleEdit }
           >
-            Adicionar Despesa
+            Editar despesa
           </button>
         </form>
       </div>);
@@ -122,19 +112,12 @@ class Form extends React.Component {
 
 const mapStateToProps = (globalState) => ({
   currencies: globalState.wallet.currencies,
-  expenses: globalState.wallet.expenses,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchCurrencyList: () => dispatch(fetchCurrency()),
-  AddExpenses: (data) => dispatch(fetchPrice(data)),
-});
-
-Form.propTypes = {
-  fetchCurrencyList: PropTypes.func.isRequired,
-  AddExpenses: PropTypes.func.isRequired,
+EditForm.propTypes = {
   currencies: PropTypes.string.isRequired,
-  expenses: PropTypes.arrayOf.isRequired,
+  expense: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default connect(mapStateToProps)(EditForm);
