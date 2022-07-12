@@ -1,0 +1,22 @@
+p {
+    margin-top: 40px;
+    margin-left: 110px;
+    margin-bottom: 40px;
+    color: #E6EBE0;
+    width: 80%;
+    text-align: center;
+}
+
+#texto {
+    font-size: 28.5px;
+    text-align: center;
+    margin-left: 180px;
+    margin-bottom: 0px;
+}
+
+#texto2 {
+    font-size: 28.5px;
+    text-align: center;
+    margin-left: 185px;
+    margin-top: 0px;
+}

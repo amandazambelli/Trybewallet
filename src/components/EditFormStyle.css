@@ -1,0 +1,55 @@
+.div-edit-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+  
+.form {
+  width: 60%;
+}
+  
+label {
+  color: #E6EBE0;
+  padding: 10px;
+}
+  
+input {
+  padding: .5rem .8rem .5rem .8rem;
+  margin: .9vw 0 ;
+  border:0;
+  border-radius: 5px;
+  font-size: 15px;
+}
+  
+select {
+  padding: .5rem .8rem .5rem .8rem;
+  margin: .9vw 0 ;
+  border:0;
+  border-radius: 5px;
+  font-size: 15px;
+}
+  
+button {
+  background: #ED6A5A;
+  color: white;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#categoria {
+  margin-left: 30px;
+}
+
+#borda-form {
+  border: 1px solid #9BC1BC;
+  border-radius: 7px;
+  padding: 10px;
+  margin-bottom: 35px;
+}

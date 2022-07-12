@@ -1,0 +1,36 @@
+.table-container {
+  margin-top: 10px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  margin-left: 150px;
+  border: 3px solid #2E3532;
+}
+
+#btn-Edit {
+  background: #ED6A5A;
+  color: #E6EBE0;
+  font-size: 15px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+th {
+  background: #9BC1BC;
+  color: #2E3532;
+  padding: 10px;
+  margin: 0;
+}
+
+td {
+  background: #2E3532;
+  border-style: none;
+  text-align: center;
+  color: #E6EBE0;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import './HeaderStyle.css';
+import { FaUserCircle } from 'react-icons/fa';
 
 class Header extends React.Component {
   render() {
@@ -11,12 +13,23 @@ class Header extends React.Component {
       return prev + soma;
     }, 0);
     return (
-      <div>
-        <h3 data-testid="email-field">{ email }</h3>
-        <p data-testid="total-field">
-          { sum.toFixed(2) }
-        </p>
-        <p data-testid="header-currency-field">BRL</p>
+      <div className="header-container">
+        <h1>
+          Trybe
+          <font color="#ED6A5A">W</font>
+          allet
+        </h1>
+        <h2 data-testid="email-field">
+          <FaUserCircle />
+          {' '}
+          { email }
+        </h2>
+        <div className="total">
+          <p id="valor" data-testid="total-field">
+            { sum.toFixed(2) }
+          </p>
+          <p id="br" data-testid="header-currency-field">BRL</p>
+        </div>
 
       </div>);
   }

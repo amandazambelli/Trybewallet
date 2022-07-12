@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { RiEditFill, RiDeleteBin5Line } from 'react-icons/ri';
 import { deleteButton, editButton } from '../actions';
+import './TableEdit.css';
 
 class Table extends React.Component {
   handleEdit = (expenseID) => {
@@ -17,7 +19,7 @@ class Table extends React.Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
+      <div className="table-container">
         <table>
           <tr>
             <th>Descrição</th>
@@ -45,18 +47,20 @@ class Table extends React.Component {
               <td>Real</td>
               <td>
                 <button
+                  id="btn-Edit"
                   type="button"
                   data-testid="edit-btn"
                   onClick={ () => this.handleEdit(expense.id) }
                 >
-                  Editar
+                  <RiEditFill />
                 </button>
                 <button
+                  id="btn-Edit"
                   type="button"
                   data-testid="delete-btn"
                   onClick={ () => this.handleRemove(expense.id) }
                 >
-                  Excluir
+                  <RiDeleteBin5Line />
                 </button>
               </td>
             </tr>

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { saveUserEmail } from '../actions/index';
+import './LoginStyle.css';
 
 class Login extends React.Component {
   constructor() {
@@ -42,11 +43,16 @@ class Login extends React.Component {
   render() {
     const { email, password, isDisabled } = this.state;
     return (
-      <div>
-        <h1>Login</h1>
+      <div className="div-container">
+        <h1 id="trybe">
+          Trybe
+          <font color="#ED6A5A">W</font>
+          allet
+        </h1>
         <form>
           <label htmlFor="inputEmail">
             <input
+              autoComplete="off"
               id="inputEmail"
               data-testid="email-input"
               type="text"
@@ -59,9 +65,10 @@ class Login extends React.Component {
           </label>
           <label htmlFor="inputPassword">
             <input
+              autoComplete="off"
               id="inputPassword"
               data-testid="password-input"
-              type="text"
+              type="password"
               placeholder="Senha"
               name="password"
               value={ password }
@@ -70,6 +77,7 @@ class Login extends React.Component {
             />
           </label>
           <button
+            className="login-button"
             type="submit"
             onClick={ this.handleSubmit }
             disabled={ isDisabled }

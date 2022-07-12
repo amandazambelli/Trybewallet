@@ -1,0 +1,62 @@
+body {
+  background: #414745;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.div-container {
+  margin-left: -5%;
+  margin-top: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  background: #2E3532;
+  color: #9BC1BC;
+  padding: 80px;
+  border: 1px solid #9BC1BC;
+  border-radius: 7px;
+}
+
+#inputEmail {
+  display: block;
+  width: 100%;
+  padding: .5rem .8rem .5rem .8rem;
+  margin: .9vw 0 ;
+  border:0;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-bottom: -5px;
+}
+
+#inputPassword {
+  display: block;
+  width: 100%;
+  padding: .5rem .8rem .5rem .8rem;
+  margin: .9vw 0 ;
+  border:0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.login-button {
+  background: #ED6A5A;
+  color: white;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin: 10px -10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #9BC1BC;
+}
+
+#trybe {
+  font-size: 55px;
+  color: #9BC1BC;
+}

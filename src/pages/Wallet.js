@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Form from '../components/Form';
 import Table from '../components/Table';
 import EditForm from '../components/EditForm';
+import './Wallet.css';
 
 class Wallet extends React.Component {
   render() {
@@ -14,6 +15,13 @@ class Wallet extends React.Component {
     return (
       <div>
         <Header />
+        <p>
+          <p id="texto">
+            Sua carteira de gastos para maior controle de despesas dentro e
+            fora do país,
+          </p>
+          <p id="texto2">com taxas de câmbio em tempo real.</p>
+        </p>
         { Number.isInteger(edit) ? <EditForm expense={ expense } /> : <Form /> }
         { expenses.length ? <Table /> : null }
       </div>
