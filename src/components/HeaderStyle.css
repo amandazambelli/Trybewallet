@@ -4,7 +4,7 @@
 }
 
 .header-container {
-  width: 196vh;
+  width: 199vh;
   height: 100px;
   background: #2E3532;
   display: flex;
@@ -21,17 +21,17 @@ h1 {
 }
 
 h2 {
-  margin-left: 45%;
+  margin-left: 25%;
   font-size: 20px;
 }
 
 #br {
-  margin-right: 40px;
+  margin-right: 80px;
   color: #9BC1BC;
 }
 
 #valor {
-  margin-right: -80px;
+  margin-right: -40px;
   color: #9BC1BC;
   font-size: 20px;
 }
