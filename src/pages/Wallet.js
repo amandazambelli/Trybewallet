@@ -18,9 +18,8 @@ class Wallet extends React.Component {
         <p>
           <p id="texto">
             Sua carteira de gastos para maior controle de despesas dentro e
-            fora do país,
+            fora do país, com taxas de câmbio em tempo real.
           </p>
-          <p id="texto2">com taxas de câmbio em tempo real.</p>
         </p>
         { Number.isInteger(edit) ? <EditForm expense={ expense } /> : <Form /> }
         { expenses.length ? <Table /> : null }
