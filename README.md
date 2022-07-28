@@ -1,16 +1,21 @@
-# 🚧 README em construção 🚧
+# TrybeWallet #
 
-<!-- Olá, Tryber!
+Projeto desenvolvido no módulo de Front-End do curso de Desenvolvimento Web da Trybe utilizando React.js e Redux como ferramenta de manipulação de estado.
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+## Habilidades Desenvolvidas: ##
 
-É essencial que você preencha esse documento por conta própria, ok?
+- Criar um store Redux em aplicações React;
+- Criar reducers no Redux em aplicações React;
+- Criar actions no Redux em aplicações React;
+- Criar dispatchers no Redux em aplicações React;
+- Conectar Redux aos componentes React;
+- Criar actions assíncronas na sua aplicação React que faz uso de Redux;
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+## Aplicação ##
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+Uma carteira de controle de gastos com conversor de moedas.
+Ao utilizar essa aplicação um usuário deverá ser capaz de:
 
--->
+Adicionar, remover e editar um gasto;
+Visualizar uma tabelas com seus gastos;
+Visualizar o total de gastos convertidos para uma moeda de escolha;
